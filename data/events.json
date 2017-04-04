@@ -1,0 +1,18 @@
+[
+  {
+    "year": 900,
+    "ADorBC": "BC",
+    "country": "China",
+    "chapter": 6,
+    "coord": [39.0842, 117.2010],
+    "description": "Chinese artisans invented paper, a type of material that will spread writing throughout the world"
+  },
+  {
+    "year": 900,
+    "ADorBC": "BC",
+    "country": "China",
+    "chapter": 6,
+    "coord": [35, 105],
+    "description": "Chinese artisans invented paper, a type of material that will spread writing throughout the world"
+  }
+]

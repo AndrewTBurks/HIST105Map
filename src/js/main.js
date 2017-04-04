@@ -1,68 +1,108 @@
 var App = App || {};
 
-window.addEventListener("resize", function() {
-
-});
-
 (function() {
   let path, zoom, projection;
 
   App.init = function() {
     // load country codes first
+    d3.queue()
+      .defer(d3.json, "./data/world.json")
+      .defer(d3.json, "./data/countryInfo.json")
+      .defer(d3.json, "./data/events.json")
+      .await(itemsLoaded);
 
 
-    createMap();
-    createTimeline();
+    function itemsLoaded(err, world, countryInfo, events) {
+      if (err) console.log(err);
+
+      App.countryCodeMap = {};
+
+      for (let country of countryInfo) {
+        App.countryCodeMap[country.ccn3] = country;
+      }
+
+      // then create map/timelines
+      createMap(world, events);
+      createTimeline(events);
+      createEvents(events);
+    }
 
 
-    function createMap() {
+    function createMap(world, events) {
       App.map = {};
 
       App.map.SVG = d3.select("#map")
         .append("svg");
 
-      let width = App.map.SVG.node().clientWidth,
-        height = App.map.SVG.node().clientHeight;
+      let width = App.map.SVG.node().parentNode.clientWidth-10,
+        height = App.map.SVG.node().parentNode.clientHeight-10;
 
-      projection = d3.geoCylindricalStereographic()
-      // .clipExtent([[0, 0], [width, height]]);
+      projection = d3.geoWagner6();
 
       // add zoom behavior
       zoom = d3.zoom()
         .scaleExtent([1, 20])
-        .translateExtent([[0, 0], [width, height]])
+        .translateExtent([[-width/2, -height/2], [3*width/2, 3*height/2]])
         .on("zoom", zoomed);
 
       path = d3.geoPath()
-      .projection(projection);
+        .projection(projection);
 
 
       App.map.SVG
-        .attr("viewBox", "0 0 " + width + " " + height)
+        .attr("width", width)
+        .attr("height", height)
+        // .attr("viewBox", "0 0 " + width + " " + height)
         // .attr("transform", "translate(109.16, 22.6) scale(1.246)")
         .call(zoom);
 
       App.map.countryG = App.map.SVG.append("g")
 
-      drawMap();
+      drawMap(world);
+      drawEvents(events);
 
-      function drawMap() {
-        d3.json("./data/world.json", function(error, json) {
+      function drawMap(json) {
           let features = topojson.feature(json, json.objects.countries).features;
 
-          console.log(features);
+          var graticule = d3.geoGraticule();
+
+
+          App.map.countryG.append("path")
+              .datum(graticule)
+              .attr("class", "graticule")
+              .attr("d", path);
+
 
           App.map.countryG.selectAll(".country")
-          .data(features)
-          .enter().append("path")
-          .attr("class", "country")
-          .attr("d", path)
-          .on("click", function(d) {
-            console.log(d);
-          });
+            .data(features)
+          .enter().insert("path", ".graticule")
+            .attr("class", "country")
+            .attr("d", path)
+            .on("click", function(d) {
+              console.log(App.countryCodeMap[d.id].name.common);
 
+              d3.selectAll(".event").classed("event-active", function(e) {
+                return e.country === App.countryCodeMap[d.id].name.common;
+              })
+            });
 
-        });
+            App.map.countryG.insert("path", ".graticule")
+              .datum(topojson.mesh(json, json.objects.countries, function(a, b) { return a !== b; }))
+              .attr("class", "boundary")
+              .attr("d", path);
+      }
+
+      function drawEvents(json) {
+        console.log(json);
+
+        App.map.countryG.selectAll(".eventPoint")
+          .data(json)
+        .enter().append("circle")
+        .attr("class", "eventPoint")
+          .attr("cx", (d) => projection(d.coord)[0])
+          .attr("cy", (d) => projection(d.coord)[1])
+          .attr("r", 10);
+
       }
 
       function zoomed() {
@@ -72,10 +112,37 @@ window.addEventListener("resize", function() {
         App.map.countryG.selectAll("path")
         .style("stroke-width", 1/d3.event.transform.k);
       }
+
+      window.addEventListener("resize", function() {
+        let width = App.map.SVG.node().parentNode.clientWidth-10,
+          height = App.map.SVG.node().parentNode.clientHeight-10;
+
+        App.map.SVG
+            .attr("width", width)
+            .attr("height", height)
+      });
     }
 
-    function createTimeline() {
+    function createTimeline(events) {
 
+    }
+
+    function createEvents(events) {
+      App.events = {};
+
+      App.events = d3.select("#events")
+      .selectAll(".event").data(events)
+      .enter().append("div")
+        .attr("class", "event")
+        .each(function(d) {
+          let self = d3.select(this);
+
+          self.append("h4")
+            .text(d.year + " " + d.ADorBC);
+
+          self.append("p")
+            .text(d.description);
+        })
     }
 
   };

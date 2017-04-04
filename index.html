@@ -7,11 +7,11 @@
   <title>Andrew Burks Map Project</title>
 
   <!-- CSS Libs -->
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
   <!-- JS libs -->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script> -->
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="./lib/js/d3.v4.min.js"></script>
   <script src="./lib/js/d3-geo-projection.v1.min.js"></script>
   <script src="./lib/js/topojson.v1.min.js"></script>
@@ -25,14 +25,24 @@
 </head>
 
 <body onload="App.init()">
-  <div id="allContent">
-    <div class="row" id="header"></div>
-    <div class="row" id="timeline">
+  <div class="container-fluid">
+    <div class="row" id="top">
+      <div class="col-md-12" id="header">
 
+      </div>
+    </div>
+    <div class="row" id="middle">
+        <div class="col-md-12" id="header">
+
+        </div>
     </div>
     <div class="row" id="bottom">
-      <div id="map"></div>
-      <div id="events"></div>
+      <div class="col-md-8" id="map">
+
+      </div>
+      <div class="col-md-4" id="events">
+        
+      </div>
 
     </div>
   </div>
