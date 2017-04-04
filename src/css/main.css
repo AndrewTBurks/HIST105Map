@@ -1,22 +1,84 @@
-/*html, body, .container-fluid {
-  width: 100%;
-  height: 100%;
-}*/
-
-#mainContent {
-  height: 100%;
+* {
+  box-sizing: border-box;
 }
 
+body {
+  overflow: hidden;
+
+  margin: 0px;
+  padding: 0px;
+}
+
+div {
+  border: 2px solid #7a7a7a;
+}
+
+.row {
+  overflow: hidden;
+
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#allContent {
+  position: absolute;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  /*margin: 5px;*/
+  padding: 15px;
+}
+
+#header {
+  height: 8%;
+  padding: 5px;
+}
+
+#timeline {
+  height: 17%;
+  padding: 5px;
+}
+
+#bottom {
+  height: 72%;
+  padding: 5px;
+}
+
+#map {
+  display: inline-block;
+  box-sizing: border-box;
+
+  width: 70%;
+  height: 100%;
+  padding: 5px;
+}
+
+#events {
+  display: inline-block;
+  box-sizing: border-box;
+
+  width: 28%;
+  height: 100%;
+  padding: 5px;
+}
+
+/* SVG styles */
+
 svg {
-  background: #8fbbb2;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
+  /*background: #0098b9;*/
+  background: white;
 }
 
 .country {
-  stroke: white;
-  fill: black;
+  fill: #9c9c9c;
+  stroke: #7c7c7c;
 }
 
 .country:hover {
-  fill: red;
+    fill: #fecc5c;
 }
