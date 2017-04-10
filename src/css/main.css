@@ -23,67 +23,79 @@ div {
 }
 
 #top {
+  width: 100%;
   /*display: block;
   position: absolute;*/
   height: 8%;
-  width: 100%;
   padding: 5px;
 }
 
 #middle {
+  width: 100%;
   /*display: block;
   position: absolute;*/
   height: 17%;
-  width: 100%;
   padding: 5px;
 }
 
 #bottom {
+  width: 100%;
   /*display: block;
   position: absolute;*/
   height: 72%;
-  width: 100%;
   padding: 5px;
 }
 
 #map {
+  box-sizing: border-box;
   /*display: inline-block;*/
   height: 100%;
-
-  box-sizing: border-box;
   padding: 5px;
 }
 
 #events {
-  box-sizing: border-box;
-  padding: 10px;
   overflow-x: hidden;
   overflow-y: auto;
 
+  box-sizing: border-box;
   height: 100%;
   max-height: 100%;
+  padding: 10px;
 
 }
 
 .event {
   display: none;
 
-  padding: 10px;
   margin: 3px;
-  border-radius: 10px;
+  padding: 10px;
 
   color: black;
   border: 3px solid #2c7bb6;
+  border-radius: 10px;
   background: #abd9e9;
+}
+
+.event>h4{
+  font-weight: bold;
 }
 
 .event-active {
   display: inline-block;
 }
 
-.event>h4{
-  font-weight: bold;
+.event:hover {
+  border: 3px solid #fec44f;
+  background: #fff7bc;
 }
+
+.event-selected {
+  border: 3px solid #b2182b;
+  background: #f4a582;
+
+  font-weight: bolder;
+}
+
 /* SVG styles */
 
 svg {
@@ -96,16 +108,26 @@ svg {
 }
 
 .country:hover {
-    fill: #fecc5c;
+  fill: #fecc5c;
 }
 
-.country-active {
-
+.country-selected {
+  fill: #fc4e2a;
 }
 
 .eventPoint {
-  fill: red;
+  fill: #4393c3;
   stroke: black;
+}
+
+.eventPoint-selected {
+  fill: #b2182b !important;
+  stroke: black;
+}
+
+.eventPoint-hovering {
+  stroke: white;
+  stroke-width: 3;
 }
 
 .boundary {

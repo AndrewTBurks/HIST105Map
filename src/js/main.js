@@ -37,7 +37,11 @@ var App = App || {};
       let width = App.map.SVG.node().parentNode.clientWidth-10,
         height = App.map.SVG.node().parentNode.clientHeight-10;
 
-      projection = d3.geoWagner6();
+      projection = d3.geoWagner6()
+        .scale(125)
+        .center([13, -2]);
+
+      console.log(projection.scale());
 
       // add zoom behavior
       zoom = d3.zoom()
@@ -79,11 +83,17 @@ var App = App || {};
             .attr("class", "country")
             .attr("d", path)
             .on("click", function(d) {
-              console.log(App.countryCodeMap[d.id].name.common);
+              console.log(App.countryCodeMap[d.id]);
 
               d3.selectAll(".event").classed("event-active", function(e) {
                 return e.country === App.countryCodeMap[d.id].name.common;
               })
+
+              let that = this;
+              d3.selectAll(".country")
+                .classed("country-selected", function() {
+                  return that == this;
+                });
             });
 
             App.map.countryG.insert("path", ".graticule")
@@ -95,13 +105,17 @@ var App = App || {};
       function drawEvents(json) {
         console.log(json);
 
+        for (let e of json) {
+          e.coord.reverse();
+        }
+
         App.map.countryG.selectAll(".eventPoint")
           .data(json)
         .enter().append("circle")
-        .attr("class", "eventPoint")
+          .attr("class", "eventPoint")
           .attr("cx", (d) => projection(d.coord)[0])
           .attr("cy", (d) => projection(d.coord)[1])
-          .attr("r", 10);
+          .attr("r", 5);
 
       }
 
@@ -110,7 +124,12 @@ var App = App || {};
 
         // make strokes on countries thinner
         App.map.countryG.selectAll("path")
-        .style("stroke-width", 1/d3.event.transform.k);
+          .style("stroke-width", 1/d3.event.transform.k);
+
+
+        App.map.countryG.selectAll(".eventPoint")
+          .attr("r", 5/d3.event.transform.k)
+          .style("stroke-width", 1/d3.event.transform.k);
       }
 
       window.addEventListener("resize", function() {
@@ -143,6 +162,28 @@ var App = App || {};
           self.append("p")
             .text(d.description);
         })
+        .on("click", function(d, i) {
+          let that = this;
+          d3.selectAll(".event")
+            .classed("event-selected", function() {
+              return that == this;
+            });
+
+          d3.selectAll(".eventPoint")
+            .classed("eventPoint-selected", (d2, i2) => i === i2);
+            // .classed("eventPoint", (d2, i2) => i !== i2);
+            // .style("fill", function(d2, i2) {
+            //   return i === i2 ? "blue" : "red";
+            // });
+        })
+        .on("mouseover", function(d, i) {
+          d3.selectAll(".eventPoint")
+            .classed("eventPoint-hovering", (d2, i2) => i === i2);
+        })
+        .on("mouseout", function(d, i) {
+          d3.selectAll(".eventPoint")
+            .classed("eventPoint-hovering", false);
+        });
     }
 
   };
