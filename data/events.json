@@ -1,7 +1,6 @@
 [
   {
-    "year": 900,
-    "ADorBC": "BC",
+    "year": -900,
     "country": "China",
     "chapter": 6,
     "coord": [39.0842, 117.2010],
@@ -9,7 +8,6 @@
   },
   {
     "year": 900,
-    "ADorBC": "BC",
     "country": "China",
     "chapter": 6,
     "coord": [35, 105],

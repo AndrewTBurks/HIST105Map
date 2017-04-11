@@ -41,8 +41,6 @@ var App = App || {};
         .scale(125)
         .center([13, -2]);
 
-      console.log(projection.scale());
-
       // add zoom behavior
       zoom = d3.zoom()
         .scaleExtent([1, 20])
@@ -82,6 +80,15 @@ var App = App || {};
           .enter().insert("path", ".graticule")
             .attr("class", "country")
             .attr("d", path)
+            .classed("noEvents", function(d) {
+              if (!App.countryCodeMap[d.id]) return true;
+
+              let name = App.countryCodeMap[d.id].name.common;
+
+              let numEvents = events.filter((e) => e.country === name).length;
+
+              return !numEvents;
+            })
             .on("click", function(d) {
               console.log(App.countryCodeMap[d.id]);
 
@@ -139,11 +146,55 @@ var App = App || {};
         App.map.SVG
             .attr("width", width)
             .attr("height", height)
+
+        if (App.timeline && App.timeline.SVG) {
+          let tW = App.timeline.SVG.node().parentNode.clientWidth-10,
+            tH = App.timeline.SVG.node().parentNode.clientHeight-10;
+
+          App.timeline.SVG
+              .attr("width", tW)
+              .attr("height", tH);
+        }
       });
     }
 
     function createTimeline(events) {
+      let timeExtents = [-3000, 2000];
 
+      App.timeline = {};
+
+      App.timeline.SVG = d3.select("#timeline")
+        .append("svg");
+
+      let width = App.timeline.SVG.node().parentNode.clientWidth-10,
+        height = App.timeline.SVG.node().parentNode.clientHeight-10;
+
+      App.timeline.SVG
+        .attr("width", width)
+        .attr("height", height);
+
+      // create axis
+      let scale = d3.scaleLinear()
+        .domain(timeExtents)
+        .range([20, width - 20]);
+
+      let axis = d3.axisBottom(scale);
+
+      App.timeline.axis = App.timeline.SVG.append("g")
+      .attr("transform", "translate(0, " + (3 * height/4) + ")");
+
+      App.timeline.axis.call(axis);
+
+      // add events to timeline
+      let eventY = (3 * height / 4);
+
+      App.timeline.SVG.selectAll(".timelineEvent")
+        .data(events)
+      .enter().append("circle")
+        .attr("class", "timelineEvent")
+        .attr("cx", (d) => scale(d.year))
+        .attr("cy", eventY)
+        .attr("r", 7.5);
     }
 
     function createEvents(events) {
@@ -157,10 +208,14 @@ var App = App || {};
           let self = d3.select(this);
 
           self.append("h4")
-            .text(d.year + " " + d.ADorBC);
+            .text(Math.abs(d.year) + (d.year > 0 ? " AD" : " BC"));
 
           self.append("p")
             .text(d.description);
+
+          self.append("p")
+            .attr("class", "chapterText")
+            .text("Chapter " + d.chapter);
         })
         .on("click", function(d, i) {
           let that = this;
@@ -171,18 +226,25 @@ var App = App || {};
 
           d3.selectAll(".eventPoint")
             .classed("eventPoint-selected", (d2, i2) => i === i2);
-            // .classed("eventPoint", (d2, i2) => i !== i2);
-            // .style("fill", function(d2, i2) {
-            //   return i === i2 ? "blue" : "red";
-            // });
+
+
+          d3.selectAll(".timelineEvent")
+            .classed("timelineEvent-selected", (d2, i2) => i === i2);
+
         })
         .on("mouseover", function(d, i) {
           d3.selectAll(".eventPoint")
             .classed("eventPoint-hovering", (d2, i2) => i === i2);
+
+          d3.selectAll(".timelineEvent")
+            .classed("timelineEvent-hovering", (d2, i2) => i === i2);
         })
         .on("mouseout", function(d, i) {
           d3.selectAll(".eventPoint")
             .classed("eventPoint-hovering", false);
+
+          d3.selectAll(".timelineEvent")
+            .classed("timelineEvent-hovering", false);
         });
     }
 

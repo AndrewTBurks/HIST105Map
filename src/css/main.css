@@ -13,7 +13,11 @@ div {
 #header {
   box-sizing: border-box;
   height: 100%;
-  padding: 5px;
+  padding: 10px;
+  padding-left: 25px;
+
+  font-size: 28px;
+  font-weight: bolder;
 }
 
 #timeline {
@@ -80,6 +84,10 @@ div {
   font-weight: bold;
 }
 
+.chapterText {
+  font-style: italic;
+}
+
 .event-active {
   display: inline-block;
 }
@@ -98,7 +106,7 @@ div {
 
 /* SVG styles */
 
-svg {
+#map>svg {
   background: #80cdc1;
 }
 
@@ -108,11 +116,15 @@ svg {
 }
 
 .country:hover {
-  fill: #fecc5c;
+  fill: #fec44f;
 }
 
 .country-selected {
-  fill: #fc4e2a;
+  fill: #fe9929;
+}
+
+.noEvents {
+  fill: #b0a99b;
 }
 
 .eventPoint {
@@ -141,4 +153,24 @@ svg {
   stroke: #a6611a;
   stroke-width: .5px;
   stroke-opacity: .5;
+}
+
+#timeline>svg {
+  background: #cfcfcf;
+}
+
+.timelineEvent {
+  fill: #4393c3;
+  stroke: black;
+  fill-opacity: 0.75;
+}
+
+.timelineEvent-selected {
+  fill: #b2182b !important;
+  stroke: black;
+}
+
+.timelineEvent-hovering {
+  stroke: white;
+  stroke-width: 3;
 }
