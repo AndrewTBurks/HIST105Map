@@ -28,7 +28,15 @@
   <div class="container-fluid">
     <div class="row" id="top">
       <div class="col-md-12" id="header">
-        Andrew Burks - HIST 105 Map Project
+        <div>
+          Andrew Burks - HIST 105 Map Project
+        </div>
+        <div>
+          Chapter:
+          <select name="chapter" id="chapterSelector" onchange="App.changeChapter(this)">
+            <option value="all">All</option>
+          </select>
+        </div>
       </div>
     </div>
     <div class="row" id="middle">

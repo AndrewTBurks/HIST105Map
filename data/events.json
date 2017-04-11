@@ -7,10 +7,31 @@
     "description": "Chinese artisans invented paper, a type of material that will spread writing throughout the world"
   },
   {
-    "year": 900,
-    "country": "China",
-    "chapter": 6,
-    "coord": [35, 105],
-    "description": "Chinese artisans invented paper, a type of material that will spread writing throughout the world"
+    "year": 1135,
+    "country": "Germany",
+    "chapter": 2,
+    "coord": [51.844302, 13.015744],
+    "description": "Discoveries of silver begin in north and central Europe"
+  },
+  {
+    "year": 1140,
+    "country": "France",
+    "chapter": 2,
+    "coord": [48.8566, 2.3522],
+    "description": "St Denis cathedral completed in Paris"
+  },
+  {
+    "year": 1275,
+    "country": "Italy",
+    "chapter": 2,
+    "coord": [45.041355, 10.622258],
+    "description": "Reading glasses invented in Northern Italy (Between 1268 and 1289)"
+  },
+  {
+    "year": 1265,
+    "country": "Italy",
+    "chapter": 3,
+    "coord": [41.4381, 13.1958],
+    "description": "St Thomas Aquinas begins writing Summa Theologica"
   }
 ]

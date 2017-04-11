@@ -4,6 +4,15 @@ var App = App || {};
   let path, zoom, projection;
 
   App.init = function() {
+    // populate chapter dropdown
+    let dropdown = d3.select("#chapterSelector");
+
+    for (let i = 1; i <= 14; i++) {
+      dropdown.append("option")
+        .text(i)
+        .attr("value", i);
+    }
+
     // load country codes first
     d3.queue()
       .defer(d3.json, "./data/world.json")
@@ -20,6 +29,8 @@ var App = App || {};
       for (let country of countryInfo) {
         App.countryCodeMap[country.ccn3] = country;
       }
+
+      events.sort((a,b) => a.year - b.year);
 
       // then create map/timelines
       createMap(world, events);
@@ -234,18 +245,40 @@ var App = App || {};
         })
         .on("mouseover", function(d, i) {
           d3.selectAll(".eventPoint")
-            .classed("eventPoint-hovering", (d2, i2) => i === i2);
+            .classed("eventPoint-faded", (d2, i2) => i !== i2);
 
           d3.selectAll(".timelineEvent")
-            .classed("timelineEvent-hovering", (d2, i2) => i === i2);
+            .classed("timelineEvent-faded", (d2, i2) => i !== i2);
         })
         .on("mouseout", function(d, i) {
           d3.selectAll(".eventPoint")
-            .classed("eventPoint-hovering", false);
+            .classed("eventPoint-faded", false);
 
           d3.selectAll(".timelineEvent")
-            .classed("timelineEvent-hovering", false);
+            .classed("timelineEvent-faded", false);
         });
+    }
+
+  };
+
+  App.changeChapter = function(option) {
+    console.log(option.value);
+
+    App.chapterFilter = option.value;
+
+    if (option.value === "all") {
+      d3.selectAll(".eventPoint")
+      .classed("eventPoint-filtered", false);
+
+      d3.selectAll(".timelineEvent")
+      .classed("timelineEvent-filtered", false);
+    } else {
+
+      d3.selectAll(".eventPoint")
+      .classed("eventPoint-filtered", (d, i) => d.chapter != option.value);
+
+      d3.selectAll(".timelineEvent")
+      .classed("timelineEvent-filtered", (d, i) => d.chapter != option.value);
     }
 
   };
