@@ -268,8 +268,6 @@ var App = App || {};
   };
 
   App.changeChapter = function(option) {
-    console.log(option.value);
-
     App.chapterFilter = option.value;
 
     if (option.value === "all") {

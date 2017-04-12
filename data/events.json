@@ -33,5 +33,40 @@
     "chapter": 3,
     "coord": [41.4381, 13.1958],
     "description": "St Thomas Aquinas begins writing Summa Theologica"
+  },
+  {
+    "year": 1080,
+    "country": "Italy",
+    "chapter": 3,
+    "coord": [44.5075, 11.351389],
+    "description": "University of Bologna founded"
+  },
+  {
+    "year": 1080,
+    "country": "Italy",
+    "chapter": 3,
+    "coord": [44.5075, 11.351389],
+    "description": "University of Bologna founded"
+  },
+  {
+    "year": 1337,
+    "country": "Ukraine",
+    "chapter": 4,
+    "coord": [45.3, 34.4],
+    "description": "Black death begins to spread through Europe (from China starting in Crimea in Europe)"
+  },
+  {
+    "year": 1080,
+    "country": "Italy",
+    "chapter": 4,
+    "coord": [44.5075, 11.351389],
+    "description": "University of Bologna founded"
+  },
+  {
+    "year": 1080,
+    "country": "Italy",
+    "chapter": 4,
+    "coord": [44.5075, 11.351389],
+    "description": "University of Bologna founded"
   }
 ]
