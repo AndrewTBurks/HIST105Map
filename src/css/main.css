@@ -22,6 +22,7 @@ div {
 
 #header>div{
   display: inline-block;
+
   margin-left: 25px;
 }
 
@@ -71,7 +72,11 @@ div {
   max-height: 100%;
   padding: 10px;
 
-  border: 3px solid #2c7bb6;
+  border-radius: 20px;
+
+  border: 5px solid white;
+  background: #7a7a7a;
+
 }
 
 .event {
@@ -82,9 +87,9 @@ div {
   /*width: 100%;*/
 
   color: black;
-  border: 3px solid #2c7bb6;
+  border: 3px solid #225ea8;
   border-radius: 10px;
-  background: #abd9e9;
+  background: #1d91c0;
 }
 
 .event>h4{
@@ -99,9 +104,16 @@ div {
   display: inline-block;
 }
 
+.event-chapterSelected {
+    display: inline-block;
+    border: 3px solid #fec44f;
+    background: #fff7bc;
+}
+
 .event:hover {
-  border: 3px solid #fec44f;
-  background: #fff7bc;
+  /*color: white;*/
+  border: 3px solid #1d91c0;
+  background: #41b6c4;
 }
 
 .event-selected {
@@ -115,6 +127,7 @@ div {
 
 #map>svg {
   background: #80cdc1;
+  border-radius: 20px;
 }
 
 .country {
@@ -171,6 +184,11 @@ div {
 
 #timeline>svg {
   background: #cfcfcf;
+  border-radius: 20px;
+}
+
+#timeline>svg>text {
+  font-size: 40px;
 }
 
 .timelineEvent {

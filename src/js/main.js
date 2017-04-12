@@ -103,15 +103,21 @@ var App = App || {};
             .on("click", function(d) {
               console.log(App.countryCodeMap[d.id]);
 
-              d3.selectAll(".event").classed("event-active", function(e) {
-                return e.country === App.countryCodeMap[d.id].name.common;
-              })
+              if (d3.select(this).classed("country-selected")) {
+                d3.select(this).classed("country-selected", false);
+                d3.selectAll(".event").classed("event-active", false);
+              } else {
+                d3.selectAll(".event").classed("event-active", function(e) {
+                  return e.country === App.countryCodeMap[d.id].name.common;
+                })
 
-              let that = this;
-              d3.selectAll(".country")
+                let that = this;
+                d3.selectAll(".country")
                 .classed("country-selected", function() {
                   return that == this;
                 });
+              }
+
             });
 
             App.map.countryG.insert("path", ".graticule")
@@ -267,6 +273,9 @@ var App = App || {};
     App.chapterFilter = option.value;
 
     if (option.value === "all") {
+      d3.selectAll(".event")
+      .classed("event-chapterSelected", false);
+
       d3.selectAll(".eventPoint")
       .classed("eventPoint-filtered", false);
 
@@ -279,6 +288,9 @@ var App = App || {};
 
       d3.selectAll(".timelineEvent")
       .classed("timelineEvent-filtered", (d, i) => d.chapter != option.value);
+
+      d3.selectAll(".event")
+      .classed("event-chapterSelected", (d, i) => d.chapter == option.value);
     }
 
   };
