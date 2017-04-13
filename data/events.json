@@ -42,11 +42,11 @@
     "description": "University of Bologna founded"
   },
   {
-    "year": 1080,
+    "year": 1098,
     "country": "Italy",
     "chapter": 3,
-    "coord": [44.5075, 11.351389],
-    "description": "University of Bologna founded"
+    "coord": [41.9, 12.5],
+    "description": "Cistercian order of monks/nuns established"
   },
   {
     "year": 1337,
@@ -56,17 +56,26 @@
     "description": "Black death begins to spread through Europe (from China starting in Crimea in Europe)"
   },
   {
-    "year": 1080,
-    "country": "Italy",
+    "year": 1439,
+    "country": "France",
     "chapter": 4,
-    "coord": [44.5075, 11.351389],
-    "description": "University of Bologna founded"
+    "coord": [48.8566, 2.3522],
+    "description": "Charles VII of France establishes Europe's first standing army"
   },
   {
-    "year": 1080,
-    "country": "Italy",
+    "year": -400,
+    "country": "Macedonia",
     "chapter": 4,
-    "coord": [44.5075, 11.351389],
-    "description": "University of Bologna founded"
+    "coord": [41.6086, 21.7453],
+    "description": "Philip and Alexander of Macedon begin combined-arms doctrine"
+  },
+  {
+    "year": 1492,
+    "country": "Bahamas",
+    "chapter": 4,
+    "coord": [24.066667, -74.466667],
+    "description": "Colombus lands in the Bahamas on his first voyage"
   }
+
+
 ]

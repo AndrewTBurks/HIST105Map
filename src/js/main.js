@@ -9,7 +9,7 @@ var App = App || {};
 
     for (let i = 1; i <= 14; i++) {
       dropdown.append("option")
-        .text(i)
+        .text("Chapter " + i)
         .attr("value", i);
     }
 
