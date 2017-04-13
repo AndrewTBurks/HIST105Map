@@ -72,7 +72,21 @@
   {
     "year": 1492,
     "country": "Bahamas",
-    "chapter": 4,
+    "chapter": 5,
+    "coord": [24.066667, -74.466667],
+    "description": "Colombus lands in the Bahamas on his first voyage"
+  },
+  {
+    "year": 1492,
+    "country": "Bahamas",
+    "chapter": 5,
+    "coord": [24.066667, -74.466667],
+    "description": "Colombus lands in the Bahamas on his first voyage"
+  },
+  {
+    "year": 1492,
+    "country": "Bahamas",
+    "chapter": 5,
     "coord": [24.066667, -74.466667],
     "description": "Colombus lands in the Bahamas on his first voyage"
   }
