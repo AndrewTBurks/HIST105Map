@@ -238,15 +238,31 @@ var App = App || {};
           let that = this;
           d3.selectAll(".event")
             .classed("event-selected", function() {
-              return that == this;
+              if (that == this) {
+                return !d3.select(this).classed("event-selected");
+              }
+
+              return false;
             });
 
           d3.selectAll(".eventPoint")
-            .classed("eventPoint-selected", (d2, i2) => i === i2);
+            .classed("eventPoint-selected", function(d2, i2) {
+              if (i === i2) {
+                return !d3.select(this).classed("eventPoint-selected");
+              }
+
+              return false;
+            });
 
 
           d3.selectAll(".timelineEvent")
-            .classed("timelineEvent-selected", (d2, i2) => i === i2);
+            .classed("timelineEvent-selected", function(d2, i2) {
+              if (i === i2) {
+                return !d3.select(this).classed("timelineEvent-selected");
+              }
+
+              return false;
+            });
 
         })
         .on("mouseover", function(d, i) {
