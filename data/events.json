@@ -119,10 +119,10 @@
     "description": "St. Bartholomew's Day massacre"
   },
   {
-    "year": -900,
-    "country": "China",
+    "year": 1384,
+    "country": "United Kingdom",
     "chapter": 6,
-    "coord": [39.0842, 117.2010],
-    "description": "Chinese artisans invented paper, a type of material that will spread writing throughout the world"
+    "coord": [51.751944, -1.257778],
+    "description": "John Wyclif completes the first English-language translation of the Bible"
   }
 ]
