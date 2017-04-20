@@ -1,12 +1,5 @@
 [
   {
-    "year": -900,
-    "country": "China",
-    "chapter": 6,
-    "coord": [39.0842, 117.2010],
-    "description": "Chinese artisans invented paper, a type of material that will spread writing throughout the world"
-  },
-  {
     "year": 1135,
     "country": "Germany",
     "chapter": 2,
@@ -77,19 +70,59 @@
     "description": "Colombus lands in the Bahamas on his first voyage"
   },
   {
-    "year": 1492,
-    "country": "Bahamas",
+    "year": 1602,
+    "country": "Netherlands",
     "chapter": 5,
-    "coord": [24.066667, -74.466667],
-    "description": "Colombus lands in the Bahamas on his first voyage"
+    "coord": [52.366667, 4.9],
+    "description": "United East India company becomes first publically traded, multinational LLC"
   },
   {
-    "year": 1492,
-    "country": "Bahamas",
+    "year": 1244,
+    "country": "Israel",
     "chapter": 5,
-    "coord": [24.066667, -74.466667],
-    "description": "Colombus lands in the Bahamas on his first voyage"
+    "coord": [31.783333, 35.216667],
+    "description": "Permanent recapture of Jerusalem by Muslims"
+  },
+  {
+    "year": 1450,
+    "country": "Germany",
+    "chapter": 6,
+    "coord": [50, 8.266667],
+    "description": "Johannes Gutenberg invents the printing press"
+  },
+  {
+    "year": 1031,
+    "country": "Spain",
+    "chapter": 6,
+    "coord": [37.883333, -4.766667],
+    "description": "University of Córdoba library destroyed, along with its (estimated) 400,000 volumes"
+  },
+  {
+    "year": -900,
+    "country": "China",
+    "chapter": 6,
+    "coord": [39.0842, 117.2010],
+    "description": "Chinese artisans invented paper, a type of material that will spread writing throughout the world"
+  },
+  {
+    "year": 1504,
+    "country": "Italy",
+    "chapter": 7,
+    "coord": [43.783333, 11.25],
+    "description": "Michaelangelo sculpts David"
+  },
+  {
+    "year": 1572,
+    "country": "France",
+    "chapter": 7,
+    "coord": [48.8566, 2.3522],
+    "description": "St. Bartholomew's Day massacre"
+  },
+  {
+    "year": -900,
+    "country": "China",
+    "chapter": 6,
+    "coord": [39.0842, 117.2010],
+    "description": "Chinese artisans invented paper, a type of material that will spread writing throughout the world"
   }
-
-
 ]

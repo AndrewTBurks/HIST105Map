@@ -121,10 +121,18 @@ div {
 }
 
 .event-selected {
-  border: 3px solid #b2182b;
-  background: #f4a582;
+  border: 3px solid #d7301f;
+  background: #ef6548;
 
   font-weight: bolder;
+}
+
+.event-selected:hover {
+
+    border: 3px solid #ef6548;
+    background: #fc8d59;
+
+    font-weight: bolder;
 }
 
 /* SVG styles */
@@ -156,12 +164,13 @@ div {
 }
 
 .eventPoint {
-  fill: #4393c3;
+  fill: #1d91c0;
   stroke: black;
+  pointer-events: none;
 }
 
 .eventPoint-selected {
-  fill: #b2182b !important;
+  fill: #ef6548 !important;
   stroke: black;
 }
 
@@ -200,13 +209,13 @@ div {
 }
 
 .timelineEvent {
-  fill: #4393c3;
+  fill: #1d91c0;
   stroke: black;
   fill-opacity: 0.5;
 }
 
 .timelineEvent-selected {
-  fill: #b2182b !important;
+  fill: #ef6548 !important;
   stroke: black;
 }
 

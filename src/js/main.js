@@ -247,7 +247,7 @@ var App = App || {};
 
           d3.selectAll(".eventPoint")
             .classed("eventPoint-selected", function(d2, i2) {
-              if (i === i2) {
+              if (Object.is(d, d2)) {
                 return !d3.select(this).classed("eventPoint-selected");
               }
 
@@ -257,7 +257,7 @@ var App = App || {};
 
           d3.selectAll(".timelineEvent")
             .classed("timelineEvent-selected", function(d2, i2) {
-              if (i === i2) {
+              if (Object.is(d, d2)) {
                 return !d3.select(this).classed("timelineEvent-selected");
               }
 
@@ -267,10 +267,23 @@ var App = App || {};
         })
         .on("mouseover", function(d, i) {
           d3.selectAll(".eventPoint")
-            .classed("eventPoint-faded", (d2, i2) => i !== i2);
+            .classed("eventPoint-faded", function(d2, i2) {
+              if (Object.is(d, d2)) {
+                d3.select(this).moveToFront();
+                return false;
+              }
+              return true;
+            });
 
           d3.selectAll(".timelineEvent")
-            .classed("timelineEvent-faded", (d2, i2) => i !== i2);
+            .classed("timelineEvent-faded",function(d2, i2) {
+              if (Object.is(d, d2)) {
+                d3.select(this).moveToFront();
+                return false;
+              }
+              return true;
+            });
+
         })
         .on("mouseout", function(d, i) {
           d3.selectAll(".eventPoint")
@@ -310,3 +323,9 @@ var App = App || {};
   };
 
 })();
+
+d3.selection.prototype.moveToFront = function() {
+  return this.each(function(){
+        this.parentNode.appendChild(this);
+      });
+};
