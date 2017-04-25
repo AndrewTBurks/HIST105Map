@@ -3,6 +3,9 @@ var App = App || {};
 (function() {
   let path, zoom, projection;
 
+  App.selectedCountry = null;
+  App.chapterFilter = "all";
+
   App.init = function() {
     // populate chapter dropdown
     let dropdown = d3.select("#chapterSelector");
@@ -104,20 +107,26 @@ var App = App || {};
               console.log(App.countryCodeMap[d.id]);
 
               if (d3.select(this).classed("country-selected")) {
+                App.selectedCountry = null;
+
                 d3.select(this).classed("country-selected", false);
                 d3.selectAll(".event").classed("event-active", false);
               } else {
+                App.selectedCountry = App.countryCodeMap[d.id].name.common;
+
                 d3.selectAll(".event").classed("event-active", function(e) {
-                  return e.country === App.countryCodeMap[d.id].name.common;
-                })
+                  return e.country === App.selectedCountry;
+                });
 
                 let that = this;
                 d3.selectAll(".country")
                 .classed("country-selected", function() {
                   return that == this;
                 });
+
               }
 
+              App.updatePointsByFilters();
             });
 
             App.map.countryG.insert("path", ".graticule")
@@ -228,7 +237,10 @@ var App = App || {};
             .text(Math.abs(d.year) + (d.year > 0 ? " AD" : " BC"));
 
           self.append("p")
-            .text(d.description);
+            .text("What: " + d.description);
+
+          self.append("h5")
+            .text("Why: " + d.importance);
 
           self.append("p")
             .attr("class", "chapterText")
@@ -273,6 +285,13 @@ var App = App || {};
                 return false;
               }
               return true;
+            })
+            .classed("eventPoint-filtered", function(d2, i2) {
+              if (Object.is(d, d2)) {
+                d3.select(this).moveToFront();
+                return false;
+              }
+              return true;
             });
 
           d3.selectAll(".timelineEvent")
@@ -282,15 +301,19 @@ var App = App || {};
                 return false;
               }
               return true;
+            })
+            .classed("timelineEvent-filtered", function(d2, i2) {
+              if (Object.is(d, d2)) {
+                d3.select(this).moveToFront();
+                return false;
+              }
+              return true;
             });
 
         })
         .on("mouseout", function(d, i) {
-          d3.selectAll(".eventPoint")
-            .classed("eventPoint-faded", false);
-
-          d3.selectAll(".timelineEvent")
-            .classed("timelineEvent-faded", false);
+          // return to initial coloring
+          App.updatePointsByFilters();
         });
     }
 
@@ -299,27 +322,50 @@ var App = App || {};
   App.changeChapter = function(option) {
     App.chapterFilter = option.value;
 
-    if (option.value === "all") {
+    App.updatePointsByFilters();
+  };
+
+  App.updatePointsByFilters = function() {
+    if (App.chapterFilter === "all") {
       d3.selectAll(".event")
-      .classed("event-chapterSelected", false);
+        .classed("event-chapterSelected", false);
 
       d3.selectAll(".eventPoint")
-      .classed("eventPoint-filtered", false);
+        .classed("eventPoint-chapter", false)
+        .classed("eventPoint-filtered", false);
 
       d3.selectAll(".timelineEvent")
-      .classed("timelineEvent-filtered", false);
+        .classed("timelineEvent-chapter", false)
+        .classed("timelineEvent-filtered", false);
     } else {
 
       d3.selectAll(".eventPoint")
-      .classed("eventPoint-filtered", (d, i) => d.chapter != option.value);
+        .classed("eventPoint-chapter", (d, i) => d.chapter == App.chapterFilter)
+        .classed("eventPoint-filtered", (d, i) => (d.chapter != App.chapterFilter) && (d.country !== App.selectedCountry));
 
       d3.selectAll(".timelineEvent")
-      .classed("timelineEvent-filtered", (d, i) => d.chapter != option.value);
+        .classed("timelineEvent-chapter", (d, i) => d.chapter == App.chapterFilter)
+        .classed("timelineEvent-filtered", (d, i) => (d.chapter != App.chapterFilter) && (d.country !== App.selectedCountry));
 
       d3.selectAll(".event")
-      .classed("event-chapterSelected", (d, i) => d.chapter == option.value);
+        .classed("event-chapterSelected", (d, i) => d.chapter == App.chapterFilter);
     }
 
+
+    function isEventFilteredOut(d, i) {
+      if (App.chapterFilter === "all" && App.selectedCountry == null) {
+        return false;
+      } else if (App.chapterFilter === "all") {
+        return d.country != App.selectedCountry;
+      } else if (App.selectedCountry == null) {
+        return d.chapter != App.chapterFilter;
+      } else {
+        return (d.country != App.selectedCountry) && (d.chapter != App.chapterFilter);
+      }
+
+      console.log(App.selectedCountry);
+
+    }
   };
 
 })();

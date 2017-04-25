@@ -4,125 +4,143 @@
     "country": "Germany",
     "chapter": 2,
     "coord": [51.844302, 13.015744],
-    "description": "Discoveries of silver begin in north and central Europe"
+    "description": "Discoveries of silver begin in north and central Europe",
+    "importance": "Infused capital into Europe, helping economic development"
   },
   {
     "year": 1140,
     "country": "France",
     "chapter": 2,
     "coord": [48.8566, 2.3522],
-    "description": "St Denis cathedral completed in Paris"
+    "description": "St Denis cathedral completed in Paris",
+    "importance": "The first monument of Gothic Architecture"
   },
   {
     "year": 1275,
     "country": "Italy",
     "chapter": 2,
     "coord": [45.041355, 10.622258],
-    "description": "Reading glasses invented in Northern Italy (Between 1268 and 1289)"
+    "description": "Reading glasses invented in Northern Italy (Between 1268 and 1289)",
+    "importance": "Extended the working life of scholars and artisans as well as improved productivity"
   },
   {
     "year": 1265,
     "country": "Italy",
     "chapter": 3,
     "coord": [41.4381, 13.1958],
-    "description": "St Thomas Aquinas begins writing Summa Theologica"
+    "description": "St Thomas Aquinas begins writing Summa Theologica",
+    "importance": "Gathered together all of the main questions of theology, doctrine, ethics, and more"
   },
   {
     "year": 1080,
     "country": "Italy",
     "chapter": 3,
     "coord": [44.5075, 11.351389],
-    "description": "University of Bologna founded"
+    "description": "University of Bologna founded",
+    "importance": "Was the first degree-granting institution of higher education"
   },
   {
     "year": 1098,
     "country": "Italy",
     "chapter": 3,
     "coord": [41.9, 12.5],
-    "description": "Cistercian order of monks/nuns established"
+    "description": "Cistercian order of monks/nuns established",
+    "importance": "Gave the most self-denying believers a home"
   },
   {
     "year": 1337,
     "country": "Ukraine",
     "chapter": 4,
     "coord": [45.3, 34.4],
-    "description": "Black death begins to spread through Europe (from China starting in Crimea in Europe)"
+    "description": "Black death begins to spread through Europe (from China starting in Crimea in Europe)",
+    "importance": "Killed up to one-third or one-half of the population in some regions"
   },
   {
     "year": 1439,
     "country": "France",
     "chapter": 4,
     "coord": [48.8566, 2.3522],
-    "description": "Charles VII of France establishes Europe's first standing army"
+    "description": "Charles VII of France establishes Europe's first standing army",
+    "importance": "Gave an advantage to centralized monarchies, allowing for political absolutism"
   },
   {
     "year": -400,
     "country": "Macedonia",
     "chapter": 4,
     "coord": [41.6086, 21.7453],
-    "description": "Philip and Alexander of Macedon begin combined-arms doctrine"
+    "description": "Philip and Alexander of Macedon begin combined-arms doctrine",
+    "importance": "Created the most sophisticated and adaptable forces of ancient times"
   },
   {
     "year": 1492,
     "country": "Bahamas",
     "chapter": 5,
     "coord": [24.066667, -74.466667],
-    "description": "Colombus lands in the Bahamas on his first voyage"
+    "description": "Colombus lands in the Bahamas on his first voyage",
+    "importance": "In August 1492, Columbus sailed the ocean blue. October 12th they sighted land, And set their feet upon new sand"
   },
   {
     "year": 1602,
     "country": "Netherlands",
     "chapter": 5,
     "coord": [52.366667, 4.9],
-    "description": "United East India company becomes first publically traded, multinational LLC"
+    "description": "United East India company was founded",
+    "importance": "It becomes the worlds first publically traded, multinational LLC"
   },
   {
     "year": 1244,
     "country": "Israel",
     "chapter": 5,
     "coord": [31.783333, 35.216667],
-    "description": "Permanent recapture of Jerusalem by Muslims"
+    "description": "Permanent recapture of Jerusalem by Muslims",
+    "importance": "The possesion of Jerusalem has been long contested by different religions"
   },
   {
     "year": 1450,
     "country": "Germany",
     "chapter": 6,
     "coord": [50, 8.266667],
-    "description": "Johannes Gutenberg invents the printing press"
+    "description": "Johannes Gutenberg invents the printing press",
+    "importance": "Helped to spread the printed word, allowing for easy reproduction of books"
   },
   {
     "year": 1031,
     "country": "Spain",
     "chapter": 6,
     "coord": [37.883333, -4.766667],
-    "description": "University of Córdoba library destroyed, along with its (estimated) 400,000 volumes"
+    "description": "University of Córdoba library destroyed, along with its (estimated) 400,000 volumes",
+    "importance": "This library would not be matched in size without a revolution in printing"
   },
   {
     "year": -900,
     "country": "China",
     "chapter": 6,
     "coord": [39.0842, 117.2010],
-    "description": "Chinese artisans invented paper, a type of material that will spread writing throughout the world"
+    "description": "Chinese artisans invented paper",
+    "importance": "It was a type of material that would spread writing throughout the world"
   },
   {
     "year": 1504,
     "country": "Italy",
     "chapter": 7,
     "coord": [43.783333, 11.25],
-    "description": "Michaelangelo sculpts David"
+    "description": "Michaelangelo sculpts David",
+    "importance": "Demonstrated a mastery of skill, to be renowned forever"
   },
   {
     "year": 1572,
     "country": "France",
     "chapter": 7,
     "coord": [48.8566, 2.3522],
-    "description": "St. Bartholomew's Day massacre"
+    "description": "St. Bartholomew's Day massacre",
+    "importance": "Resulted in the death of some 20,000 Protestants throughout France"
   },
   {
     "year": 1384,
     "country": "United Kingdom",
-    "chapter": 6,
+    "chapter": 7,
     "coord": [51.751944, -1.257778],
-    "description": "John Wyclif completes the first English-language translation of the Bible"
+    "description": "John Wyclif completes the first English-language translation of the Bible",
+    "importance": "Helped spread Christianity to English speaking nations"
   }
 ]

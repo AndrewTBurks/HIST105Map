@@ -104,6 +104,10 @@ div {
   font-style: italic;
 }
 
+.event>h5 {
+  font-weight: bold;
+}
+
 .event-active {
   display: inline-block;
 }
@@ -143,16 +147,16 @@ div {
 }
 
 .country {
-  fill: #dfc27d;
-  stroke: #a6611a;
+  fill: #addd8e;
+  stroke: #238443;
 }
 
 .country:hover {
-  fill: #fec44f;
+  fill: #78c679;
 }
 
 .country-selected {
-  fill: #fe9929;
+  fill: #41ab5d;
 }
 
 .noEvents {
@@ -174,27 +178,29 @@ div {
   stroke: black;
 }
 
-.eventPoint-faded {
+.eventPoint-chapter {
+  fill: #fec44f;
+  stroke: black;
+  fill-opacity: 1;
+  stroke-opacity: 1;
+}
+
+.eventPoint-faded, .eventPoint-filtered{
   stroke: #ffffff;
   fill-opacity: 0.25;
   stroke-opacity: 0.4;
 }
 
-.eventPoint-filtered {
-  stroke: #ffffff;
-  fill-opacity: 0.25;
-  stroke-opacity: 0.4;
-}
 
 .boundary {
   fill: none;
-  stroke: #a6611a;
+  stroke: #238443;
   stroke-width: .5px;
 }
 
 .graticule {
   fill: none;
-  stroke: #a6611a;
+  stroke: #238443;
   stroke-width: .5px;
   stroke-opacity: .5;
 }
@@ -219,13 +225,14 @@ div {
   stroke: black;
 }
 
-.timelineEvent-faded {
-  stroke: #ffffff;
-  fill-opacity: 0.10;
-  stroke-opacity: 0.25;
+.timelineEvent-chapter {
+  fill: #fec44f;
+  stroke: black;
+  fill-opacity: 0.5;
+  stroke-opacity: 1;
 }
 
-.timelineEvent-filtered {
+.timelineEvent-faded, .timelineEvent-filtered {
   stroke: #ffffff;
   fill-opacity: 0.10;
   stroke-opacity: 0.25;
