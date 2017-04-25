@@ -3,7 +3,7 @@ var App = App || {};
 (function() {
   let path, zoom, projection;
 
-  App.selectedCountry = null;
+  App.selectedCountry = "none";
   App.chapterFilter = "all";
 
   App.init = function() {
@@ -107,7 +107,7 @@ var App = App || {};
               console.log(App.countryCodeMap[d.id]);
 
               if (d3.select(this).classed("country-selected")) {
-                App.selectedCountry = null;
+                App.selectedCountry = "none";
 
                 d3.select(this).classed("country-selected", false);
                 d3.selectAll(".event").classed("event-active", false);
@@ -279,13 +279,6 @@ var App = App || {};
         })
         .on("mouseover", function(d, i) {
           d3.selectAll(".eventPoint")
-            .classed("eventPoint-faded", function(d2, i2) {
-              if (Object.is(d, d2)) {
-                d3.select(this).moveToFront();
-                return false;
-              }
-              return true;
-            })
             .classed("eventPoint-filtered", function(d2, i2) {
               if (Object.is(d, d2)) {
                 d3.select(this).moveToFront();
@@ -295,13 +288,6 @@ var App = App || {};
             });
 
           d3.selectAll(".timelineEvent")
-            .classed("timelineEvent-faded",function(d2, i2) {
-              if (Object.is(d, d2)) {
-                d3.select(this).moveToFront();
-                return false;
-              }
-              return true;
-            })
             .classed("timelineEvent-filtered", function(d2, i2) {
               if (Object.is(d, d2)) {
                 d3.select(this).moveToFront();
@@ -326,7 +312,7 @@ var App = App || {};
   };
 
   App.updatePointsByFilters = function() {
-    if (App.chapterFilter === "all") {
+    if (App.chapterFilter === "all" && App.selectedCountry === "none") {
       d3.selectAll(".event")
         .classed("event-chapterSelected", false);
 
@@ -341,11 +327,11 @@ var App = App || {};
 
       d3.selectAll(".eventPoint")
         .classed("eventPoint-chapter", (d, i) => d.chapter == App.chapterFilter)
-        .classed("eventPoint-filtered", (d, i) => (d.chapter != App.chapterFilter) && (d.country !== App.selectedCountry));
+        .classed("eventPoint-filtered", (d, i) => (d.chapter != App.chapterFilter) && (d.country != App.selectedCountry));
 
       d3.selectAll(".timelineEvent")
         .classed("timelineEvent-chapter", (d, i) => d.chapter == App.chapterFilter)
-        .classed("timelineEvent-filtered", (d, i) => (d.chapter != App.chapterFilter) && (d.country !== App.selectedCountry));
+        .classed("timelineEvent-filtered", (d, i) => (d.chapter != App.chapterFilter) && (d.country != App.selectedCountry));
 
       d3.selectAll(".event")
         .classed("event-chapterSelected", (d, i) => d.chapter == App.chapterFilter);
@@ -364,7 +350,6 @@ var App = App || {};
       }
 
       console.log(App.selectedCountry);
-
     }
   };
 
