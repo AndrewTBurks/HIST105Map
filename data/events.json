@@ -142,5 +142,29 @@
     "coord": [51.751944, -1.257778],
     "description": "John Wyclif completes the first English-language translation of the Bible",
     "importance": "Helped spread Christianity to English speaking nations"
+  },
+  {
+    "year": 1616,
+    "country": "Italy",
+    "chapter": 8,
+    "coord": [43.783333, 11.25],
+    "description": "Galileo begins clash with church over heliocentrism",
+    "importance": "This idea would later be accepted as scientific truth, although refuted by church at the time"
+  },
+  {
+    "year": 1687,
+    "country": "United Kingdom",
+    "chapter": 8,
+    "coord": [52.205, 0.119],
+    "description": "Newton publishes Principia, describing his 3 laws of motion",
+    "importance": "One of the most important advancements in physics to date"
+  },
+  {
+    "year": 1869,
+    "country": "Russia",
+    "chapter": 8,
+    "coord": [59.95, 30.3],
+    "description": "Dimitrii Mendeleev conceives the periodic table",
+    "importance": "A first way to organize the discovered elements by their properties, still used today!"
   }
 ]
