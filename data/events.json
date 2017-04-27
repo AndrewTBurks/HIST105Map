@@ -166,5 +166,77 @@
     "coord": [59.95, 30.3],
     "description": "Dimitrii Mendeleev conceives the periodic table",
     "importance": "A first way to organize the discovered elements by their properties, still used today!"
+  },
+  {
+    "year": 1792,
+    "country": "United States",
+    "chapter": 9,
+    "coord": [40.706833, -74.011028],
+    "description": "New York Stock & Exchange Board founded",
+    "importance": "Today it is, by far, the world's largest stock exchange"
+  },
+  {
+    "year": 1687,
+    "country": "United Kingdom",
+    "chapter": 9,
+    "coord": [51.51406, -0.08839],
+    "description": "Bank of England created",
+    "importance": "Most modern banks are based on the model created by Bank of England"
+  },
+  {
+    "year": 1842,
+    "country": "United Kingdom",
+    "chapter": 9,
+    "coord": [51.8175, -0.3524],
+    "description": "John Bennet patents the first artificial fertilizer",
+    "importance": "Important in the scientific improvement of agriculture"
+  },
+  {
+    "year": 1513,
+    "country": "Italy",
+    "chapter": 10,
+    "coord": [43.783333, 11.25],
+    "description": "Machiavelli writes The Prince",
+    "importance": "The Prince informed leaders strategies through which they can form powerful states"
+  },
+  {
+    "year": 1215,
+    "country": "United Kingdom",
+    "chapter": 10,
+    "coord": [51.25, -0.416667],
+    "description": "Magna Carta signed",
+    "importance": "The Magna Carta established the principle that everyone is subject to the law, even the king"
+  },
+  {
+    "year": 1689,
+    "country": "United Kingdom",
+    "chapter": 10,
+    "coord": [51.499167, -0.124722],
+    "description": "English Bill of Rights passed by Parliament",
+    "importance": "Created separation of power, limitation of power for monarchs, enahnces the democrait election, and enforces the right to free speech"
+  },
+  {
+    "year": 1819,
+    "country": "United States",
+    "chapter": 11,
+    "coord": [38.904722, -77.016389],
+    "description": "The US Surpreme Court rules that corporations have inherent rights",
+    "importance": "Made being a corporation a more ideal business form, as restrictions by government were eased"
+  },
+  {
+    "year": 1844,
+    "country": "United Kingdom",
+    "chapter": 11,
+    "coord": [51.499167, -0.124722],
+    "description": "Joint Stock Companies Act",
+    "importance": "Expanded access to the incorporation of joint-stock companies, however, did not offer limited liability for corporations"
+  },
+  {
+    "year": 1785,
+    "country": "United Kingdom",
+    "chapter": 11,
+    "coord": [52.95, -1.133333],
+    "description": "Edmund Cartwright invents the power loom",
+    "importance": "Major factor in the industrialization of weaving"
   }
 ]

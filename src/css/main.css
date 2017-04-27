@@ -175,6 +175,7 @@ div {
   fill: #1d91c0;
   stroke: black;
   pointer-events: none;
+  stroke-width: 2;
 }
 
 .eventPoint-selected {
@@ -190,9 +191,10 @@ div {
 }
 
 .eventPoint-faded, .eventPoint-filtered{
-  stroke: #ffffff;
+  /*stroke: #000000;*/
+  stroke: #FFFFFF;
   fill-opacity: 0.0;
-  stroke-opacity: 0.4;
+  stroke-opacity: 0.3;
 }
 
 
@@ -237,7 +239,7 @@ div {
 }
 
 .timelineEvent-faded, .timelineEvent-filtered {
-  stroke: #ffffff;
+  stroke: #000000;
   fill-opacity: 0.0;
   stroke-opacity: 0.25;
 }

@@ -57,7 +57,7 @@ var App = App || {};
 
       // add zoom behavior
       zoom = d3.zoom()
-        .scaleExtent([1, 20])
+        .scaleExtent([1, 40])
         .translateExtent([[-width/2, -height/2], [3*width/2, 3*height/2]])
         .on("zoom", zoomed);
 
@@ -162,7 +162,7 @@ var App = App || {};
 
         App.map.countryG.selectAll(".eventPoint")
           .attr("r", 5/d3.event.transform.k)
-          .style("stroke-width", 1/d3.event.transform.k);
+          .style("stroke-width", 2/d3.event.transform.k);
       }
 
       window.addEventListener("resize", function() {
@@ -327,11 +327,15 @@ var App = App || {};
 
       d3.selectAll(".eventPoint")
         .classed("eventPoint-chapter", (d, i) => d.chapter == App.chapterFilter)
-        .classed("eventPoint-filtered", (d, i) => (d.chapter != App.chapterFilter) && (d.country != App.selectedCountry));
+        .classed("eventPoint-filtered", (d, i) => (d.chapter != App.chapterFilter) && (d.country != App.selectedCountry))
+      .filter((d, i) => !(d.chapter != App.chapterFilter) && (d.country != App.selectedCountry))
+        .moveToFront();
 
       d3.selectAll(".timelineEvent")
         .classed("timelineEvent-chapter", (d, i) => d.chapter == App.chapterFilter)
-        .classed("timelineEvent-filtered", (d, i) => (d.chapter != App.chapterFilter) && (d.country != App.selectedCountry));
+        .classed("timelineEvent-filtered", (d, i) => (d.chapter != App.chapterFilter) && (d.country != App.selectedCountry))
+      .filter((d, i) => !(d.chapter != App.chapterFilter) && (d.country != App.selectedCountry))
+        .moveToFront();
 
       d3.selectAll(".event")
         .classed("event-chapterSelected", (d, i) => d.chapter == App.chapterFilter);
