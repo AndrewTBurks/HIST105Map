@@ -223,7 +223,7 @@ div {
 .timelineEvent {
   fill: #1d91c0;
   stroke: black;
-  fill-opacity: 0.5;
+  /*fill-opacity: 0.5;*/
 }
 
 .timelineEvent-selected {
@@ -234,7 +234,7 @@ div {
 .timelineEvent-chapter {
   fill: #fec44f;
   stroke: black;
-  fill-opacity: 0.5;
+  /*fill-opacity: 0.5;*/
   stroke-opacity: 1;
 }
 

@@ -1,5 +1,29 @@
 [
   {
+    "year": -1000,
+    "country": "Lebanon",
+    "chapter": 1,
+    "coord": [34.123611, 35.651111],
+    "description": "Phonecians develop a phonemic system of writing",
+    "importance": "Much less complicated than Egyptian hyroglyphics, consisting of only 22 characters"
+  },
+  {
+    "year": -330,
+    "country": "Greece",
+    "chapter": 1,
+    "coord": [37.983972, 23.727806],
+    "description": "Alexander the Great conquers a massive empire",
+    "importance": "Produces the Hellenistic culture with influence from cultures throughout his empire"
+  },
+  {
+    "year": -221,
+    "country": "China",
+    "chapter": 1,
+    "coord": [34.329605, 108.708992],
+    "description": "The Qin Dynasty established China as a unified state",
+    "importance": "China goes on to be history's longest enduring society"
+  },
+  {
     "year": 1135,
     "country": "Germany",
     "chapter": 2,
@@ -262,5 +286,93 @@
     "coord": [36.076944, -75.704722],
     "description": "The Wright brothers achieved the first successful controlled, sustained, flight",
     "importance": "They pioneered air travel for the future, along with many other applications of aircraft"
+  },
+  {
+    "year": 1933,
+    "country": "Germany",
+    "chapter": 13,
+    "coord": [52.507222, 13.145833],
+    "description": "Hitler comes to power",
+    "importance": "Commits mass genocide and becomes one of the most hated figures in history"
+  },
+  {
+    "year": 1991,
+    "country": "Russia",
+    "chapter": 13,
+    "coord": [55.75, 37.616667],
+    "description": "USSR Collapses",
+    "importance": "This signals the end of the Cold War"
+  },
+  {
+    "year": 1962,
+    "country": "Cuba",
+    "chapter": 13,
+    "coord": [22.716944, -83.051111],
+    "description": "Cuban Missile Crisis",
+    "importance": "At this point, the Cold War was close to escalating into a full nuclear war between the USSR and the United States"
+  },
+  {
+    "year": 1954,
+    "country": "United States",
+    "chapter": 14,
+    "coord": [38.890556, -77.004444],
+    "description": "Brown v. Board of Education overturns Plessy v. Ferguson",
+    "importance": "Declared segregation in public schools to be unconstitutional"
+  },
+  {
+    "year": 1865,
+    "country": "United States",
+    "chapter": 14,
+    "coord": [38.889803, -77.009114],
+    "description": "13th Ammendment Passed in the Senate",
+    "importance": "Abolishes slavery and involuntary servitude in the United States"
+  },
+  {
+    "year": 1964,
+    "country": "United States",
+    "chapter": 14,
+    "coord": [38.889803, -77.009114],
+    "description": "Civil Rights Act of 1964",
+    "importance": "Discrimination and segregation deemed illegal by Congress"
+  },
+  {
+    "year": 1885,
+    "country": "United States",
+    "chapter": "imp",
+    "coord": [41.836944, -87.684722],
+    "description": "",
+    "importance": ""
+  },
+  {
+    "year": 1886,
+    "country": "United States",
+    "chapter": "imp",
+    "coord": [40.7127, -74.0059],
+    "description": "",
+    "importance": ""
+  },
+  {
+    "year": 1903,
+    "country": "United States",
+    "chapter": "imp",
+    "coord": [36.076944, -75.704722],
+    "description": "",
+    "importance": ""
+  },
+  {
+    "year": 1885,
+    "country": "United States",
+    "chapter": "imp",
+    "coord": [41.836944, -87.684722],
+    "description": "",
+    "importance": ""
+  },
+  {
+    "year": 1886,
+    "country": "United States",
+    "chapter": "imp",
+    "coord": [40.7127, -74.0059],
+    "description": "",
+    "importance": ""
   }
 ]

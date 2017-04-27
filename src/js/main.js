@@ -244,7 +244,7 @@ var App = App || {};
 
           self.append("p")
             .attr("class", "chapterText")
-            .text("Chapter " + d.chapter);
+            .text(d.chapter == "imp" ? "Important Place" : "Chapter " + d.chapter);
         })
         .on("click", function(d, i) {
           let that = this;
