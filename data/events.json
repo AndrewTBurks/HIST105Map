@@ -238,5 +238,29 @@
     "coord": [52.95, -1.133333],
     "description": "Edmund Cartwright invents the power loom",
     "importance": "Major factor in the industrialization of weaving"
+  },
+  {
+    "year": 1885,
+    "country": "United States",
+    "chapter": 12,
+    "coord": [41.836944, -87.684722],
+    "description": "Chicago's Home Insurance building completed",
+    "importance": "The world's first skyscraper"
+  },
+  {
+    "year": 1886,
+    "country": "United States",
+    "chapter": 12,
+    "coord": [40.7127, -74.0059],
+    "description": "Nikola Tesla created the Alternating Current (AC) system",
+    "importance": "Allowed for much more feasible transfer of power over long distances, spreading electricity usage"
+  },
+  {
+    "year": 1903,
+    "country": "United States",
+    "chapter": 12,
+    "coord": [36.076944, -75.704722],
+    "description": "The Wright brothers achieved the first successful controlled, sustained, flight",
+    "importance": "They pioneered air travel for the future, along with many other applications of aircraft"
   }
 ]
