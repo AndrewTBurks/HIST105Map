@@ -185,7 +185,7 @@ var App = App || {};
     }
 
     function createTimeline(events) {
-      let timeExtents = [-3000, 2000];
+      let timeExtents = [-2750, 2000];
 
       App.timeline = {};
 
@@ -204,7 +204,8 @@ var App = App || {};
         .domain(timeExtents)
         .range([20, width - 20]);
 
-      let axis = d3.axisBottom(scale);
+      let axis = d3.axisBottom(scale)
+        .ticks(20);
 
       App.timeline.axis = App.timeline.SVG.append("g")
       .attr("transform", "translate(0, " + (3 * height/4) + ")");

@@ -336,43 +336,59 @@
     "importance": "Discrimination and segregation deemed illegal by Congress"
   },
   {
-    "year": 1885,
-    "country": "United States",
+    "year": -600,
+    "country": "China",
     "chapter": "imp",
-    "coord": [41.836944, -87.684722],
-    "description": "",
-    "importance": ""
+    "coord": [40.68, 117.23],
+    "description": "The Great Wall of China",
+    "importance": "Great feat of ancient construction which is visible from the moon"
   },
   {
-    "year": 1886,
-    "country": "United States",
+    "year": -100,
+    "country": "Jordan",
     "chapter": "imp",
-    "coord": [40.7127, -74.0059],
-    "description": "",
-    "importance": ""
+    "coord": [30.328611, 35.441944],
+    "description": "Petra",
+    "importance": "A phenomenal historical and ancient city with rock cut architecture and a water conduit system"
   },
   {
-    "year": 1903,
-    "country": "United States",
+    "year": 1931,
+    "country": "Brazil",
     "chapter": "imp",
-    "coord": [36.076944, -75.704722],
-    "description": "",
-    "importance": ""
+    "coord": [-22.951944, -43.210556],
+    "description": "Christ the Redeemer",
+    "importance": "A symbol of Christianity across the world as well as a cultural icon of Rio de Janeiro and Brazil"
   },
   {
-    "year": 1885,
-    "country": "United States",
+    "year": 1450,
+    "country": "Peru",
     "chapter": "imp",
-    "coord": [41.836944, -87.684722],
-    "description": "",
-    "importance": ""
+    "coord": [-13.163333, -72.545556],
+    "description": "Machu Picchu",
+    "importance": "Remnants of an ancient Incan estate in the mountains of Peru"
   },
   {
-    "year": 1886,
-    "country": "United States",
+    "year": 600,
+    "country": "Mexico",
     "chapter": "imp",
-    "coord": [40.7127, -74.0059],
-    "description": "",
-    "importance": ""
+    "coord": [20.683056, -88.568611],
+    "description": "Chichen Itza",
+    "importance": "A pre-Colombian city built by the Mayans"
+  },
+  {
+    "year": 1648,
+    "country": "India",
+    "chapter": "imp",
+    "coord": [27.175, 78.041944],
+    "description": "Taj Mahal",
+    "importance": "A marble mausoleum and a spectacular piece of Mughal architecture in India"
+  },
+  {
+    "year": -2560,
+    "country": "Egypt",
+    "chapter": "imp",
+    "coord": [29.979175, 31.134358],
+    "description": "The Great Pyramid of Giza",
+    "importance": "It was the tallest man-made structure for almost 4 millenia, remarkable to be built in ancient times"
   }
 ]
